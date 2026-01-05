@@ -17,11 +17,11 @@ $roomTypes = getAllRoomTypes($pdo);
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = [
-        'room_number' => sanitize($_POST['room_number']),
-        'room_type_id' => intval($_POST['room_type_id']),
-        'floor' => intval($_POST['floor']),
-        'status' => sanitize($_POST['status']),
-        'features' => sanitize($_POST['features'])
+            'room_number' => sanitize($_POST['room_number']),
+            'room_type_id' => intval($_POST['room_type_id']),
+            'floor' => intval($_POST['floor']),
+            'status' => sanitize($_POST['status']),
+            'features' => sanitize($_POST['features'])
     ];
 
     if (updateRoom($pdo, $id, $data)) {
@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <select id="room_type_id" name="room_type_id" required>
                             <?php foreach ($roomTypes as $type): ?>
                                 <option value="<?php echo $type['id']; ?>"
-                                    <?php echo $type['id'] == $room['room_type_id'] ? 'selected' : ''; ?>>
+                                        <?php echo $type['id'] == $room['room_type_id'] ? 'selected' : ''; ?>>
                                     <?php echo htmlspecialchars($type['type_name']); ?> -
                                     <?php echo formatCurrency($type['price_per_night']); ?>
                                 </option>
