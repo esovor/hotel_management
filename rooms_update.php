@@ -78,7 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="form-group">
                         <label for="room_number">Room Number *</label>
                         <input type="text" id="room_number" name="room_number" required
-                               value="<?php echo htmlspecialchars($room['room_number']); ?>">
+                               value="<?php echo htmlspecialchars($room['room_number'] ?? ''); ?>">
                     </div>
 
                     <div class="form-group">
@@ -99,23 +99,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div class="form-group">
                         <label for="floor">Floor</label>
                         <input type="number" id="floor" name="floor" min="1" max="20"
-                               value="<?php echo $room['floor']; ?>">
+                               value="<?php echo htmlspecialchars($room['floor'] ?? ''); ?>">
                     </div>
 
                     <div class="form-group">
                         <label for="status">Status *</label>
                         <select id="status" name="status" required>
-                            <option value="available" <?php echo $room['status'] == 'available' ? 'selected' : ''; ?>>Available</option>
-                            <option value="occupied" <?php echo $room['status'] == 'occupied' ? 'selected' : ''; ?>>Occupied</option>
-                            <option value="maintenance" <?php echo $room['status'] == 'maintenance' ? 'selected' : ''; ?>>Maintenance</option>
-                            <option value="cleaning" <?php echo $room['status'] == 'cleaning' ? 'selected' : ''; ?>>Cleaning</option>
+                            <option value="available" <?php echo ($room['status'] ?? '') == 'available' ? 'selected' : ''; ?>>Available</option>
+                            <option value="occupied" <?php echo ($room['status'] ?? '') == 'occupied' ? 'selected' : ''; ?>>Occupied</option>
+                            <option value="maintenance" <?php echo ($room['status'] ?? '') == 'maintenance' ? 'selected' : ''; ?>>Maintenance</option>
+                            <option value="cleaning" <?php echo ($room['status'] ?? '') == 'cleaning' ? 'selected' : ''; ?>>Cleaning</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label for="features">Additional Features</label>
-                    <textarea id="features" name="features" rows="3"><?php echo htmlspecialchars($room['features']); ?></textarea>
+                    <textarea id="features" name="features" rows="3"><?php echo htmlspecialchars($room['features'] ?? ''); ?></textarea>
                 </div>
 
                 <div class="form-group" style="text-align: center;">
