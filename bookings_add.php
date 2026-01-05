@@ -72,7 +72,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <ul>
                 <li><a href="index.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                 <li><a href="bookings_add.php" class="active"><i class="fas fa-calendar-plus"></i> New Booking</a></li>
-                <li><a href="guest.php"><i class="fas fa-users"></i> Guests</a></li>
+                <li><a href="guests.php"><i class="fas fa-users"></i> Guests</a></li>
                 <li><a href="rooms.php"><i class="fas fa-bed"></i> Rooms</a></li>
             </ul>
         </nav>

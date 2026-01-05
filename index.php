@@ -148,23 +148,19 @@ $stats = getDashboardStats($pdo);
                                 <td>
                                     <div class="action-buttons">
                                         <a href="bookings_show.php?id=<?php echo $booking['id']; ?>"
-                                           class="btn btn-primary btn-small" title="View">
-                                            <i class="fas fa-eye"></i>
+                                           class="btn btn-primary btn-small" title="View">View<i class="fas fa-eye"></i>
                                         </a>
                                         <?php if ($booking['status'] == 'confirmed'): ?>
                                             <a href="bookings_update.php?action=checkin&id=<?php echo $booking['id']; ?>"
-                                               class="btn btn-success btn-small" title="Check-in">
-                                                <i class="fas fa-sign-in-alt"></i>
+                                               class="btn btn-success btn-small" title="Check-in">Check-in<i class="fas fa-sign-in-alt"></i>
                                             </a>
                                         <?php elseif ($booking['status'] == 'checked_in'): ?>
                                             <a href="bookings_update.php?action=checkout&id=<?php echo $booking['id']; ?>"
-                                               class="btn btn-warning btn-small" title="Check-out">
-                                                <i class="fas fa-sign-out-alt"></i>
+                                               class="btn btn-warning btn-small" title="Check-out">Check-out<i class="fas fa-sign-out-alt"></i>
                                             </a>
                                         <?php endif; ?>
                                         <a href="#" onclick="if(confirm('Delete this booking?')) window.location='bookings_update.php?action=delete&id=<?php echo $booking['id']; ?>'"
-                                           class="btn btn-danger btn-small" title="Delete">
-                                            <i class="fas fa-trash"></i>
+                                           class="btn btn-danger btn-small" title="Delete">Delete<i class="fas fa-trash"></i>
                                         </a>
                                     </div>
                                 </td>
