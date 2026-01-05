@@ -107,12 +107,10 @@ $rooms = getAllRooms($pdo);
                                 <td>
                                     <div class="action-buttons">
                                         <a href="rooms_update.php?id=<?php echo $room['id']; ?>"
-                                           class="btn btn-primary btn-small" title="Edit">
-                                            <i class="fas fa-edit"></i>
+                                           class="btn btn-primary btn-small" title="Edit">Edit<i class="fas fa-edit"></i>
                                         </a>
                                         <a href="#" onclick="if(confirm('Delete this room?')) window.location='?delete=<?php echo $room['id']; ?>'"
-                                           class="btn btn-danger btn-small" title="Delete">
-                                            <i class="fas fa-trash"></i>
+                                           class="btn btn-danger btn-small" title="Delete">Delete<i class="fas fa-trash"></i>
                                         </a>
                                     </div>
                                 </td>
