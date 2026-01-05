@@ -81,7 +81,7 @@ $guests = getAllGuests($pdo, $search);
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
-                        <th>ID Type</th>
+<!--                        <th>ID Type</th>-->
                         <th>ID Number</th>
                         <th>Country</th>
                         <th>Registered</th>
@@ -104,21 +104,19 @@ $guests = getAllGuests($pdo, $search);
                                 </td>
                                 <td><?php echo htmlspecialchars($guest['email']); ?></td>
                                 <td><?php echo htmlspecialchars($guest['phone']); ?></td>
-                                <td>
-                                    <span class="tag"><?php echo ucfirst(str_replace('_', ' ', $guest['id_type'])); ?></span>
-                                </td>
+<!--                                <td>-->
+<!--                                    <span class="tag">--><?php //echo ucfirst(str_replace('_', ' ', $guest['id_type'])); ?><!--</span>-->
+<!--                                </td>-->
                                 <td><?php echo htmlspecialchars($guest['id_number']); ?></td>
                                 <td><?php echo htmlspecialchars($guest['country']); ?></td>
                                 <td><?php echo date('M d, Y', strtotime($guest['created_at'])); ?></td>
                                 <td>
                                     <div class="action-buttons">
                                         <a href="guest_update.php?id=<?php echo $guest['id']; ?>"
-                                           class="btn btn-primary btn-small" title="Edit">
-                                            <i class="fas fa-edit"></i>
+                                           class="btn btn-primary btn-small" title="Edit">Edit<i class="fas fa-edit"></i>
                                         </a>
                                         <a href="#" onclick="if(confirm('Delete this guest?')) window.location='?delete=<?php echo $guest['id']; ?>'"
-                                           class="btn btn-danger btn-small" title="Delete">
-                                            <i class="fas fa-trash"></i>
+                                           class="btn btn-danger btn-small" title="Delete">Delete<i class="fas fa-trash"></i>
                                         </a>
                                     </div>
                                 </td>
