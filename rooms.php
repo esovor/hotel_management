@@ -30,13 +30,14 @@ $rooms = getAllRooms($pdo);
     <div class="container header-container">
         <div class="logo">
             <i class="fas fa-hotel"></i>
+            <img src="assest/grapes.png" height="40" alt="Grapes Hotel Logo">
             <span><?php echo APP_NAME; ?></span>
         </div>
         <nav>
             <ul>
                 <li><a href="index.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
                 <li><a href="bookings_add.php"><i class="fas fa-calendar-plus"></i> New Booking</a></li>
-                <li><a href="guest.php"><i class="fas fa-users"></i> Guests</a></li>
+                <li><a href="guests.php"><i class="fas fa-users"></i> Guests</a></li>
                 <li><a href="roomType.php"><i class="fas fa-list"></i> Room Types</a></li>
                 <li><a href="rooms.php" class="active"><i class="fas fa-bed"></i> Rooms</a></li>
                 <li><a href="payments.php"><i class="fas fa-credit-card"></i> Payments</a></li>

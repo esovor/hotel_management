@@ -30,6 +30,7 @@ $roomTypes = getAllRoomTypes($pdo);
     <div class="container header-container">
         <div class="logo">
             <i class="fas fa-hotel"></i>
+            <img src="assest/grapes.png" height="40" alt="Grapes Hotel Logo">
             <span><?php echo APP_NAME; ?></span>
         </div>
         <nav>

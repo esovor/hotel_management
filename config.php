@@ -7,7 +7,7 @@ const DB_NAME = 'hotel_management';
 
 // Application settings
 const CURRENCY = 'GH₵';
-const APP_NAME = 'Ghana Hotel Management';
+const APP_NAME = 'Grapes Hotel Management';
 const TIMEZONE = 'Africa/Accra';
 
 // Set timezone

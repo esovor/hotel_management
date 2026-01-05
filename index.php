@@ -19,6 +19,9 @@ $stats = getDashboardStats($pdo);
     <div class="container header-container">
         <div class="logo">
             <i class="fas fa-hotel"></i>
+
+                <img src="assest/grapes.png" height="40" alt="Grapes Hotel Logo">
+
             <span><?php echo APP_NAME; ?></span>
         </div>
         <nav>
@@ -43,7 +46,7 @@ $stats = getDashboardStats($pdo);
                     <i class="fas fa-calendar-check"></i>
                 </div>
                 <div class="stat-info">
-                    <h3><?php echo $stats['bookings_today']; ?></h3>
+                    <h4><?php echo $stats['bookings_today']; ?></h4>
                     <p>Today's Bookings</p>
                 </div>
             </div>
@@ -53,7 +56,7 @@ $stats = getDashboardStats($pdo);
                     <i class="fas fa-user-check"></i>
                 </div>
                 <div class="stat-info">
-                    <h3><?php echo $stats['current_guests']; ?></h3>
+                    <h4><?php echo $stats['current_guests']; ?></h4>
                     <p>Current Guests</p>
                 </div>
             </div>
@@ -63,7 +66,7 @@ $stats = getDashboardStats($pdo);
                     <i class="fas fa-bed"></i>
                 </div>
                 <div class="stat-info">
-                    <h3><?php echo $stats['available_rooms']; ?></h3>
+                    <h4><?php echo $stats['available_rooms']; ?></h4>
                     <p>Available Rooms</p>
                 </div>
             </div>
@@ -73,7 +76,7 @@ $stats = getDashboardStats($pdo);
                     <i class="fas fa-money-bill-wave"></i>
                 </div>
                 <div class="stat-info">
-                    <h3><?php echo formatCurrency($stats['today_revenue']); ?></h3>
+                    <h4><?php echo formatCurrency($stats['today_revenue']); ?></h4>
                     <p>Today's Revenue</p>
                 </div>
             </div>
