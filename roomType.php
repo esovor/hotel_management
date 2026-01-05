@@ -102,10 +102,10 @@ $roomTypes = getAllRoomTypes($pdo);
                                 <td><?php echo $type['capacity']; ?> person(s)</td>
                                 <td>
                                     <?php
-                                    $amenities = explode(',', $type['amenities']);
+                                    $amenities = explode(',', $type['amenities'] ?? '');
                                     foreach ($amenities as $amenity):
                                         if (trim($amenity)): ?>
-                                            <span class="tag"><?php echo trim($amenity); ?></span>
+                                            <span class="tag"><?php echo trim(htmlspecialchars($amenity)); ?></span>
                                         <?php endif;
                                     endforeach; ?>
                                 </td>
@@ -113,12 +113,10 @@ $roomTypes = getAllRoomTypes($pdo);
                                 <td>
                                     <div class="action-buttons">
                                         <a href="roomType_update.php?id=<?php echo $type['id']; ?>"
-                                           class="btn btn-primary btn-small" title="Edit">
-                                            <i class="fas fa-edit"></i>
+                                           class="btn btn-primary btn-small" title="Edit">Edit<i class="fas fa-edit"></i>
                                         </a>
                                         <a href="#" onclick="if(confirm('Delete this room type?')) window.location='?delete=<?php echo $type['id']; ?>'"
-                                           class="btn btn-danger btn-small" title="Delete">
-                                            <i class="fas fa-trash"></i>
+                                           class="btn btn-danger btn-small" title="Delete">Delete<i class="fas fa-trash"></i>
                                         </a>
                                     </div>
                                 </td>

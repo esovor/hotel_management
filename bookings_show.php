@@ -230,10 +230,10 @@ $nights = (strtotime($booking['check_out']) - strtotime($booking['check_in'])) /
                 </div>
                 <div class="card-body">
                     <?php
-                    $amenities = explode(',', $booking['amenities']);
+                    $amenities = explode(',', $booking['amenities'] ?? '');
                     foreach ($amenities as $amenity):
                         if (trim($amenity)): ?>
-                            <span class="tag"><?php echo trim($amenity); ?></span>
+                            <span class="tag"><?php echo trim(htmlspecialchars($amenity)); ?></span>
                         <?php endif;
                     endforeach; ?>
                 </div>

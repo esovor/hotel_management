@@ -19,9 +19,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = [
             'room_number' => sanitize($_POST['room_number']),
             'room_type_id' => intval($_POST['room_type_id']),
-            'floor' => intval($_POST['floor']),
+            'floor' => intval($_POST['floor'] ?? 0),
             'status' => sanitize($_POST['status']),
-            'features' => sanitize($_POST['features'])
+            'features' => sanitize($_POST['features'] ?? '')
     ];
 
     if (updateRoom($pdo, $id, $data)) {

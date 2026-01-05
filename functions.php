@@ -10,7 +10,15 @@ function getAllRoomTypes($pdo) {
 function getRoomTypeById($pdo, $id) {
     $stmt = $pdo->prepare("SELECT * FROM room_types WHERE id = ?");
     $stmt->execute([$id]);
-    return $stmt->fetch();
+    $roomType = $stmt->fetch();
+
+    // Ensure all fields have default values
+    if ($roomType) {
+        $roomType['description'] = $roomType['description'] ?? '';
+        $roomType['amenities'] = $roomType['amenities'] ?? '';
+    }
+
+    return $roomType;
 }
 
 function addRoomType($pdo, $data) {
@@ -58,7 +66,16 @@ function getRoomById($pdo, $id) {
             WHERE r.id = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$id]);
-    return $stmt->fetch();
+    $room = $stmt->fetch();
+
+    // Ensure all fields have default values
+    if ($room) {
+        $room['features'] = $room['features'] ?? '';
+        $room['floor'] = $room['floor'] ?? '';
+        $room['status'] = $room['status'] ?? 'available';
+    }
+
+    return $room;
 }
 
 function getAvailableRooms($pdo, $check_in, $check_out, $room_type_id = null) {
@@ -132,7 +149,17 @@ function getAllGuests($pdo, $search = '') {
 function getGuestById($pdo, $id) {
     $stmt = $pdo->prepare("SELECT * FROM guests WHERE id = ?");
     $stmt->execute([$id]);
-    return $stmt->fetch();
+    $guest = $stmt->fetch();
+
+    // Ensure all fields have default values
+    if ($guest) {
+        $guest['email'] = $guest['email'] ?? '';
+        $guest['address'] = $guest['address'] ?? '';
+        $guest['id_number'] = $guest['id_number'] ?? '';
+        $guest['country'] = $guest['country'] ?? 'Ghana';
+    }
+
+    return $guest;
 }
 
 function addGuest($pdo, $data) {
@@ -201,8 +228,20 @@ function getBookingById($pdo, $id) {
             WHERE b.id = ?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$id]);
-    return $stmt->fetch();
+    $booking = $stmt->fetch();
+
+    // Ensure all fields have default values
+    if ($booking) {
+        $booking['special_requests'] = $booking['special_requests'] ?? '';
+        $booking['amenities'] = $booking['amenities'] ?? '';
+        $booking['address'] = $booking['address'] ?? '';
+        $booking['id_number'] = $booking['id_number'] ?? '';
+    }
+
+    return $booking;
 }
+
+
 
 function calculateBookingAmount($room_price, $check_in, $check_out) {
     $nights = (strtotime($check_out) - strtotime($check_in)) / (60 * 60 * 24);

@@ -102,12 +102,12 @@ $guests = getAllGuests($pdo, $search);
                                 <td>
                                     <strong><?php echo htmlspecialchars($guest['first_name'] . ' ' . $guest['last_name']); ?></strong>
                                 </td>
-                                <td><?php echo htmlspecialchars($guest['email']); ?></td>
+                                <td><?php echo htmlspecialchars($guest['email'] ?? ''); ?></td>
                                 <td><?php echo htmlspecialchars($guest['phone']); ?></td>
 <!--                                <td>-->
 <!--                                    <span class="tag">--><?php //echo ucfirst(str_replace('_', ' ', $guest['id_type'])); ?><!--</span>-->
 <!--                                </td>-->
-                                <td><?php echo htmlspecialchars($guest['id_number']); ?></td>
+                                <td><?php echo htmlspecialchars($guest['id_number'] ?? ''); ?></td>
                                 <td><?php echo htmlspecialchars($guest['country']); ?></td>
                                 <td><?php echo date('M d, Y', strtotime($guest['created_at'])); ?></td>
                                 <td>

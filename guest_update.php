@@ -14,14 +14,14 @@ if (!$guest) {
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = [
-        'first_name' => sanitize($_POST['first_name']),
-        'last_name' => sanitize($_POST['last_name']),
-        'email' => sanitize($_POST['email']),
-        'phone' => sanitize($_POST['phone']),
-        'address' => sanitize($_POST['address']),
-        'id_type' => sanitize($_POST['id_type']),
-        'id_number' => sanitize($_POST['id_number']),
-        'country' => sanitize($_POST['country'])
+            'first_name' => sanitize($_POST['first_name']),
+            'last_name' => sanitize($_POST['last_name']),
+            'email' => sanitize($_POST['email'] ?? ''),
+            'phone' => sanitize($_POST['phone']),
+            'address' => sanitize($_POST['address'] ?? ''),
+            'id_type' => sanitize($_POST['id_type'] ?? 'national_id'),
+            'id_number' => sanitize($_POST['id_number'] ?? ''),
+            'country' => sanitize($_POST['country'] ?? 'Ghana')
     ];
 
     if (updateGuest($pdo, $id, $data)) {

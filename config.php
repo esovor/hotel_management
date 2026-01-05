@@ -37,12 +37,23 @@ function formatCurrency($amount) {
     return CURRENCY . number_format($amount, 2);
 }
 
-// Function to sanitize input
+// Function to sanitize input - UPDATED TO HANDLE NULL
 function sanitize($data) {
+    if ($data === null) {
+        return '';
+    }
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
+}
+
+// Function to safely escape HTML output - NEW FUNCTION
+function escape($data) {
+    if ($data === null) {
+        return '';
+    }
+    return htmlspecialchars($data, ENT_QUOTES, 'UTF-8');
 }
 
 // Redirect function

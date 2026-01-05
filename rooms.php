@@ -104,6 +104,7 @@ $rooms = getAllRooms($pdo);
                                 </td>
                                 <td><?php echo formatCurrency($room['price_per_night']); ?></td>
                                 <td><?php echo htmlspecialchars($room['features'] ?? 'None'); ?></td>
+
                                 <td>
                                     <div class="action-buttons">
                                         <a href="rooms_update.php?id=<?php echo $room['id']; ?>"
