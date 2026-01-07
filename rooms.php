@@ -24,13 +24,15 @@ $rooms = getAllRooms($pdo);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rooms - <?php echo APP_NAME; ?></title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
 <header>
     <div class="container header-container">
         <div class="logo">
             <i class="fas fa-hotel"></i>
-            <img src="assest/grapes.png" height="40" alt="Grapes Hotel Logo">
+<!--            <img src="assest/grapes.png" height="40" alt="Grapes Hotel Logo">-->
             <span><?php echo APP_NAME; ?></span>
         </div>
         <nav>

@@ -25,13 +25,15 @@ $payments = getAllPayments($pdo, $search);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payments - <?php echo APP_NAME; ?></title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
 <header>
     <div class="container header-container">
         <div class="logo">
             <i class="fas fa-hotel"></i>
-            <img src="assest/grapes.png" height="40" alt="Grapes Hotel Logo">
+<!--            <img src="assest/grapes.png" height="40" alt="Grapes Hotel Logo">-->
             <span><?php echo APP_NAME; ?></span>
         </div>
         <nav>
@@ -125,11 +127,11 @@ $payments = getAllPayments($pdo, $search);
                                     <div class="action-buttons">
                                         <a href="payment_update.php?id=<?php echo $payment['id']; ?>"
                                            class="btn btn-primary btn-small" title="Edit">
-                                            <i class="fas fa-edit"></i>
+                                            <i class="fas fa-edit">Edit</i>
                                         </a>
                                         <a href="#" onclick="if(confirm('Delete this payment?')) window.location='?delete=<?php echo $payment['id']; ?>'"
                                            class="btn btn-danger btn-small" title="Delete">
-                                            <i class="fas fa-trash"></i>
+                                            <i class="fas fa-trash">Delete</i>
                                         </a>
                                     </div>
                                 </td>

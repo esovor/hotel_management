@@ -13,6 +13,7 @@ $stats = getDashboardStats($pdo);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - <?php echo APP_NAME; ?></title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 <header>
@@ -20,7 +21,7 @@ $stats = getDashboardStats($pdo);
         <div class="logo">
             <i class="fas fa-hotel"></i>
 
-                <img src="assest/grapes.png" height="40" alt="Grapes Hotel Logo">
+<!--                <img src="assest/grapes.png" height="40" alt="Grapes Hotel Logo">-->
 
             <span><?php echo APP_NAME; ?></span>
         </div>
@@ -263,9 +264,9 @@ $stats = getDashboardStats($pdo);
 
             <div class="footer-section">
                 <h3>Contact</h3>
-                <p><i class="fas fa-phone"></i> +233 24 123 4567</p>
-                <p><i class="fas fa-envelope"></i> info@hotelghana.com</p>
-                <p><i class="fas fa-map-marker-alt"></i> Accra, Ghana</p>
+                <p><i class="fas fa-phone"></i> +233 277 164 4060</p>
+                <p><i class="fas fa-envelope"></i> mauddzitse1@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i> Accra-Kibi, Ghana</p>
             </div>
         </div>
 
