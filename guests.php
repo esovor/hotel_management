@@ -39,10 +39,10 @@ $guests = getAllGuests($pdo, $search);
         <nav>
             <ul>
                 <li><a href="index.php"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-                <li><a href="bookings_add.php"><i class="fas fa-calendar-plus"></i> New Booking</a></li>
+                <li><a href="booking.php"><i class="fas fa-calendar-plus"></i>Bookings</a></li>
                 <li><a href="guests.php" class="active"><i class="fas fa-users"></i> Guests</a></li>
-                <li><a href="roomType.php"><i class="fas fa-list"></i> Room Types</a></li>
-                <li><a href="rooms.php"><i class="fas fa-bed"></i> Rooms</a></li>
+                <li><a href="rooms.php"><i class="fas fa-list"></i> Rooms</a></li>
+                <li><a href="roomType.php"><i class="fas fa-bed"></i> Room Type</a></li>
                 <li><a href="payments.php"><i class="fas fa-credit-card"></i> Payments</a></li>
             </ul>
         </nav>
@@ -170,13 +170,7 @@ $guests = getAllGuests($pdo, $search);
     </div>
 </main>
 
-<footer>
-    <div class="container">
-        <div class="copyright">
-            &copy; <?php echo date('Y'); ?> <?php echo APP_NAME; ?>. All rights reserved.
-        </div>
-    </div>
-</footer>
+<?php   include 'footer.php'; ?>
 
 <script src="script.js"></script>
 </body>
